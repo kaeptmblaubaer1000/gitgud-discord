@@ -23,6 +23,10 @@ class GitGudCog(commands.Cog, name="Git Gud"):
         return command
 
     gud = _make_command("gud")
+    rekt = _make_command("rekt")
+    spooked = _make_command("spooked")
+    job = _make_command("job")
+    money = _make_command("money")
 
 def setup(bot):
     bot.add_cog(GitGudCog(bot))
