@@ -7,15 +7,22 @@ class GitGudCog(commands.Cog, name="Git Gud"):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="gud")
-    async def gud(self, ctx, *, args=""):
-        fp = io.StringIO()
-        args = shlex.split(args)
-        git.gud(args, output=fp.write)
-        if "--super" in args:
-            await ctx.send(f"```\n{fp.getvalue()}\n```")
-        else:
-            await ctx.send(fp.getvalue())
+    def _make_command(name):
+        gudcommand = getattr(git, name)
+
+        @commands.command(name=name)
+        async def command(self, ctx, *, args=""):
+            fp = io.StringIO()
+            args = shlex.split(args)
+            gudcommand(args, output=fp.write)
+            if "--super" in args:
+                await ctx.send(f"```\n{fp.getvalue()}\n```")
+            else:
+                await ctx.send(fp.getvalue())
+        command.__name__ = name
+        return command
+
+    gud = _make_command("gud")
 
 def setup(bot):
     bot.add_cog(GitGudCog(bot))
