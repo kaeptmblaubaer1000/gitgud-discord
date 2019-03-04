@@ -8,7 +8,7 @@ logging.getLogger().addHandler(handler)
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger(discord.__name__).setLevel(logging.INFO)
 
-bot = commands.Bot(command_prefix=["git ", "git", "$ git", "$ git "],
+bot = commands.Bot(command_prefix=["git ", "git-", "$ git ", "$ git-", "git", "$ git"],
                    description="Git Gud - a utility for when you are told to 'git gud'")
 bot.load_extension("gitgud_discord")
 bot.load_extension("jishaku")
