@@ -2,3 +2,5 @@
 *.pyo
 __pycache__/
 bot_token.txt
+config.yaml
+.venv
