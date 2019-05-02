@@ -12,6 +12,8 @@ bot = commands.Bot(command_prefix=["git ", "git-", "$ git ", "$ git-", "git", "$
                    description="Git Gud - a utility for when you are told to 'git gud'")
 bot.load_extension("gitgud_discord")
 bot.load_extension("jishaku")
+bot.load_extension("kb1000_discordpy_common")
+bot.load_extension("kb1000_discordpy_common.help")
 
 
 @bot.event

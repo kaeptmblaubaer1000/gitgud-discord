@@ -1,5 +1,6 @@
 from discord.ext import commands
 from gitgud.gitgud import git
+from kb1000_discordpy_common.help import register_argparse_command
 import io
 import shlex
 import sys
@@ -15,6 +16,7 @@ class GitGudCog(commands.Cog, name="Git Gud"):
         gudcommand = getattr(git, name)
 
         @commands.command(name=name)
+        @register_argparse_command
         async def command(self, ctx, *, args=""):
             args = await cleaner.convert(ctx, args)
             err = 0
