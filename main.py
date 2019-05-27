@@ -20,7 +20,7 @@ bot.load_extension("kb1000_discordpy_common.help")
 async def on_ready():
     print(
         f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\n')
-    await bot.change_presence(activity=discord.Game(name="Git Gud (https://git.io/fhhbL or https://github.com/kaeptmblaubaer1000/gitgud-discord)"))
+    await bot.change_presence(activity=discord.Game(name="Git Gud (https://git.io/fhhbL or https://github.com/kb-1000/gitgud-discord)"))
     print('Successfully set rich presence')
     logger.info(bot.guilds)
 
